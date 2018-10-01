@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-import settings_secret
+from .settings_secret import user,pw
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -76,10 +76,10 @@ WSGI_APPLICATION = 'producthunt.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backend.postgresql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'producthuntdb',
-        'USER': settings_secret.user,
-        'PASSWORD': settings_secret.pw,
+        'USER': user,
+        'PASSWORD': pw,
         'HOST': 'localhost',
         'POST':' 5432',
     }
